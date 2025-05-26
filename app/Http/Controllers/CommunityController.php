@@ -32,6 +32,8 @@ public function send_post(Request $request)  {
     $post->piattaforma = $piattaforma;
     $post->description = $description;
 
+ dd($request->all());
+
     $post->save();
 
     return redirect()->back();

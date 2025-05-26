@@ -14,7 +14,7 @@
         <!-- Form Iscrizione -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form class="mx-auto" method="POST" action="{{ route('Community.send') }}">
+                <form class="mx-auto" method="POST" action="{{ route('Community.send') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 mt-3">
                         <input type="text" name="nome" class="form-control" placeholder="Nome" required>
@@ -27,6 +27,14 @@
                     </div>
                     <div class="mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                     <label for="imgProfile" class="form-label fs-5">Inserisci un immagine di profilo</label>
+                    <div class="mb-3">
+                        <input type="file" name="imgProfile" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgPost" class="form-label fs-5">Inserisci un immagine nel post</label>
+                        <input type="file" name="imgPost" class="form-control"  required>
                     </div>
                     <div class="mb-3">
                         <label for="piattaforma" class="form-label fs-5">Scegli la tua piattaforma</label>
