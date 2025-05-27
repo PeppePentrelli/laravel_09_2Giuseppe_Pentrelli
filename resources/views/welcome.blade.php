@@ -23,6 +23,49 @@
 
     <x-TornaSu></x-TornaSu>
 
+
+<section
+    class="d-flex flex-column flex-md-row vh-100 align-items-center justify-content-center position-relative overflow-hidden sezione-contest-home px-3 px-md-0"
+    data-aos="zoom-in" data-aos-duration="1200"
+    style="min-height: 600px; max-height: 100vh;">
+
+    <img 
+        class="img-fluid mb-4 mb-md-0" 
+        style="max-width: 120px; width: 25vw; max-width: 100px;" 
+        src="/Media/newIcon.png" alt="Icona Contest">
+<div class="text-center text-white position-relative z-1 text-glass p-3 p-md-4"
+     data-aos="fade-up" data-aos-delay="300" style="max-width: 600px; font-size: 1rem;">
+
+
+
+    <span class="badge bg-danger mb-3 d-inline-block text-corner2">🚨 NOVITÀ — Contest a tempo limitato</span>
+
+    <h2 class="fw-bold text-corner">Partecipa al Contest Esclusivo!</h2>
+
+    <p class="lead text-corner2">Carica la tua immagine, sfida la community e vinci premi unici. Hai tempo fino a:</p>
+
+    <div id="countdown" class="mb-3 text-corner2"></div>
+
+    <details class="mt-3 text-center text-corner2" style="max-width: 500px; margin: 0 auto;">
+        <summary><strong>Leggi il regolamento del concorso</strong></summary>
+        <p>
+            • Ogni utente può partecipare con 1 foto<br>
+            • La foto deve rispettare il tema...<br>
+            • La più votata entro il 15/06 vincerà un premio digitale...
+        </p>
+        <a class="text-warning" style="text-decoration: none;" href="{{ route('paginaRegolamento') }}">
+            Visualizza regolamento completo
+        </a>
+    </details>
+
+    <a href="{{ route('paginaContest') }}" class="btn btn-warning btn-lg mt-4">
+        Scopri il Contest
+    </a>
+</div>
+
+</section>
+
+
     <section
         class=" sezione-armi-home  text-glass vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden"
         data-aos="zoom-in" data-aos-duration="1200">
@@ -107,10 +150,10 @@
             data-aos-delay="300">
 
             <!-- Contenuto in primo piano -->
-            <div class="text-center text-white position-relative z-1" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center text-white position-relative z-1" data-aos="fade-up" data-aos-delay="300" >
                 <h1 class="display-4 fw-bold">Unisciti alla nostra Community!!</h1>
                 <p class="lead fs-4">Crea discussioni,trova nuovi amici e tanto altro!!</p>
-                <a href="{{ route('paginaArmi') }}" class="btn btn-outline-light mt-3">Unisciti</a>
+                <a href="{{ route('paginaCommunity') }}" class="btn btn-outline-light mt-3">Unisciti</a>
             </div>
     </section>
 
@@ -120,7 +163,7 @@
 
     {{-- form --}}
 
-    <section class="form-section my-5 section-form ">
+    <section class="form-section my-5 section-form formFortnite">
         <div class="container text-white">
 
 
@@ -144,20 +187,29 @@
                     @endif
 
 
-                    <form class="fortnite-form mx-auto" style="" method="POST"
-                        action="{{ route('send_email') }}">
+                    <form id="formFortnite" class="fortnite-form mx-auto" style="" method="POST"
+                        action="{{ route('send_email') }}#formFortnite">
                         @csrf
+                        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $errore)
+                <li>{{ $errore }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                         <div class="mb-3 mt-5">
-                            <input type="text" name="name" class="form-control form-fortnite"
-                                placeholder="Nome giocatore" required>
+                            <input type="text" name="name" class="form-control form-fortnite fs-4"
+                                placeholder="Nome giocatore" >
                         </div>
                         <div class="mb-3">
-                            <input type="email" name="email" class="form-control form-fortnite"
-                                placeholder="Email" required>
+                            <input type="email" name="email" class="form-control form-fortnite fs-4"
+                                placeholder="Email" >
                         </div>
                         <div class="mb-3">
-                            <textarea name="description" class="form-control form-fortnite" rows="4" placeholder="Scrivi un messaggio..."
-                                required></textarea>
+                            <textarea name="description" class="form-control form-fortnite fs-4" rows="4" placeholder="Scrivi un messaggio..."
+                                ></textarea>
                         </div>
                         <div class="row justify-content-center d-flex">
                             <div class="text-center mt-3">

@@ -24,6 +24,12 @@
         <li class="nav-item">
           <a class="nav-link @if (Route::currentRouteName() === 'paginaCommunity') active-custom @endif" href="{{ route('paginaCommunity') }}">Community</a>
         </li>
+        <li class="nav-item">
+<a class="nav-link @if (Route::currentRouteName() === 'paginaContest') active-custom @endif" href="{{ route('paginaContest') }}">Contest</a>
+</li>
+        <li class="nav-item">
+<a class="nav-link @if (Route::currentRouteName() === 'paginaGalleria') active-custom @endif" href="{{ route('paginaGalleria') }}">Galleria</a>
+</li>
                 <li class="nav-item">
           <a class="nav-link @if (Route::currentRouteName() === 'PaginaChiSiamo') active-custom @endif" href="{{ route('PaginaChiSiamo') }}">Chi Siamo</a>
         </li>

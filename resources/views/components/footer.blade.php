@@ -36,6 +36,8 @@
                         <li><a class="footer-link" href="https://www.dc.com/" target="_blank" rel="noopener noreferrer">DC Comics</a></li>
                         <li><a class="footer-link" href="https://www.starwars.com/" target="_blank" rel="noopener noreferrer">Star Wars</a></li>
                         <li><a class="footer-link" href="https://en.dragon-ball-official.com/" target="_blank" rel="noopener noreferrer">Dragon Ball</a></li>
+                        <li><a class="footer-link" href="https://aulab.it/lp-aispecialist?utm_term=aulab&utm_source=adwords&utm_medium=ppc&utm_campaign=googleads_Aulab_Search_Brand&hsa_cam=10617260380&hsa_grp=154262707821&hsa_mt=e&hsa_src=g&hsa_ad=686641668381&hsa_acc=1259057101&hsa_net=adwords&hsa_kw=aulab&hsa_tgt=kwd-1048611554352&hsa_ver=3&gad_source=1&gad_campaignid=10617260380&gbraid=0AAAAADQgCuo80qOde6mXZ_V93Qkp-9Nh8&gclid=Cj0KCQjwxdXBBhDEARIsAAUkP6hD9QrrG2jRkD-U4w4ej-sK1pPlRYBEqzNq9eFn7YI6jlIPW_LYnQYaAtD_EALw_wcB" target="_blank" rel="noopener noreferrer">Aulab</a></li>
+
                       
                 </ul>
             </div>
@@ -48,8 +50,10 @@
                     <li><a class="footer-link" href="{{ route('paginaArmi') }}">Armi</a></li>
                     <li><a class="footer-link" href="{{ route('paginaSkin') }}">Skin</a></li>
                     <li><a class="footer-link" href="{{ route('paginaBundle') }}">Bundle</a></li>
-                    <li><a class="footer-link" href="#">Eventi</a></li>
-                    <li><a class="footer-link" href="#">News</a></li>
+                    <li><a class="footer-link" href="{{route('paginaCommunity')}}">Community</a></li>
+                    <li><a class="footer-link" href="{{route('paginaGalleria')}}">Galleria</a></li>
+                    <li><a class="footer-link" href="{{route('PaginaChiSiamo')}}">Chi siamo</a></li>
+                    <li><a class="footer-link" href="{{route('paginaContest')}}">Contest</a></li>
                 </ul>
             </div>
 

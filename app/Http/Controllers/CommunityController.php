@@ -16,12 +16,25 @@ public function CommunityFunction() {
 
 public function send_post(Request $request)  { 
 
+  $imgProfile = null;
+    $imgPost = null;
+
     $nome = $request->nome;
     $cognome = $request->cognome;
     $nomeEpic = $request->nomeEpic;
     $email = $request->email;
     $piattaforma = $request->piattaforma;
     $description = $request->description;
+
+
+if ($request->file('imgProfile')) {
+        $imgProfile = $request->file('imgProfile')->store('imgProfile', 'public');
+    }
+
+   if ($request->file('imgPost')) {
+        $imgPost = $request->file('imgPost')->store('imgPost', 'public');
+    }
+
 
 
     $post = new Community();
@@ -31,8 +44,13 @@ public function send_post(Request $request)  {
     $post->email = $email;
     $post->piattaforma = $piattaforma;
     $post->description = $description;
+    $post->imgProfile = $imgProfile;
+    $post->imgPost = $imgPost;
 
- dd($request->all());
+
+    
+
+//  dd($request->all());
 
     $post->save();
 
@@ -62,8 +80,26 @@ public function add_comment(Request $request, $id)
     $comment->autore = $request->autore;
     $comment->contenuto = $request->contenuto;
     $comment->save();
-
+ $postId = $comment->community_id;
     return redirect()->back();
 }
+
+public function reportFunction(Request $request,$id) {
+
+    $report_comment = $request->input('report_comment');
+    $comment = Comment::findOrFail($id);
+    $comment->report= $comment->report +1;
+    $comment->report_comment = $report_comment;
+    $comment->save();
+ 
+
+return back()->with([
+    'Reportmessage' => 'Segnalazione inviata con successo!',
+    'reported_post_id' => $comment->community_id,
+]);
+
+}
+
+
 
  }

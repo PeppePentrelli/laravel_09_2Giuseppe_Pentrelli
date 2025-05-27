@@ -6,12 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    // public function up(): void
-    // {
-    //     Schema::table('communities', function (Blueprint $table) {
-    //         $table->unsignedInteger('likes')->default(0);
-    //     });
-    // }
+
     
     public function down(): void
     {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\AdminMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ContactRequest;
 
 class PublicController extends Controller
 {
@@ -19,7 +20,7 @@ class PublicController extends Controller
         return view('contact_us');
     }
 
-    public function send_email(Request $request) { 
+    public function send_email(ContactRequest $request) { 
      
 
 $contact_mail= [
@@ -30,7 +31,7 @@ $contact_mail= [
 
 Mail::to('noReplay@Fortnite-Blog.com')->send(new AdminMail($contact_mail));
 
-return redirect()->back()->with('message', "L'iscrizione è avvenuta con successo");
+return redirect()->back()->with('message', "L'iscrizione è avvenuta con successo")->withFragment('formFortnite');;
 
     }
 
@@ -46,5 +47,16 @@ return redirect()->back()->with('message', "L'iscrizione è avvenuta con success
 
         return view('ChiSiamo');
     }
+
+
+      
+    public function paginaRegolamentoFunction() { 
+
+        return view('RegolamentoContest');
+    }
+
+
+
+
 
 }

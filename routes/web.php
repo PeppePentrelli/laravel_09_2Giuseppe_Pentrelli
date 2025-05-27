@@ -5,11 +5,12 @@ use App\Http\Controllers\SkinController;
 use App\Http\Controllers\BundleController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\WeaponController;
+use App\Http\Controllers\ContestController;
 use App\Http\Controllers\CommunityController;
 
 Route::get('/', [PublicController::class, 'HomeFunction'])->name('Home');
 
-
+Route::get('RegolamentoContest', [PublicController::class, 'paginaRegolamentoFunction'])->name('paginaRegolamento');
 
 Route::get('Armi', [WeaponController::class , 'WeaponFunction'] )->name('paginaArmi');
 
@@ -36,7 +37,10 @@ Route::get('Community', [CommunityController::class , 'CommunityFunction'] )->na
 Route::post('Community/send', [CommunityController::class, 'send_post'])->name('Community.send');
 Route::post('/community/{id}/like', [CommunityController::class, 'add_like'])->name('Community.like');
 
+
+
 Route::post('Community/comment/{id}', [CommunityController::class, 'add_comment'])->name('Community.comment');
+Route::post('/community/comment/{id}/report', [CommunityController::class, 'reportFunction'])->name('Community.report');
 
 
 
@@ -44,3 +48,9 @@ Route::post('Community/comment/{id}', [CommunityController::class, 'add_comment'
 Route::get('privacy' , [PublicController::class , 'privacyFunction'])->name('paginaPrivacy');
 
 Route::get('ChiSiamo' , [PublicController::class , 'PaginaChiSiamoFunction'])->name('PaginaChiSiamo');
+
+
+Route::get('Contest', [ContestController::class , 'paginaContestFunction'])->name('paginaContest');
+Route::post('/contest', [ContestController::class, 'store'])->name('contest.store');
+
+Route::get('Galleria', [ContestController::class , 'GalleriaFunction'])->name('paginaGalleria');

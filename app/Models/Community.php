@@ -15,6 +15,10 @@ class Community extends Model
         'piattaforma',
         'description',
         'likes', 
+        'imgPost', 
+        'imgProfile', 
+
+
     ];
 
     public function comments()

@@ -44,6 +44,7 @@
 }
 
 
+
 /* Sezione Font */
 @font-face {
   font-family: 'Fortnite-font-1';
@@ -283,6 +284,19 @@ h2 {
 }
 
 
+.sezione-contest-home{
+
+  background-image: url('/public/Media/contest-presentazione3.jpg');
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 230, 88, 0.4);
+  border-top: solid 2px var(--giallo-sole);
+  border-bottom: solid 2px var(--giallo-sole);
+
+}
+
+
 .div-lead {
   transition: transform 1s ease;
  
@@ -333,6 +347,14 @@ h2 {
   background-position: center;
 }
 
+
+.text-corner {
+    font-size: 2.5rem;
+}
+
+.text-corner2 {
+    font-size: 1.4rem;
+}
 /* HomePage */
 
 
@@ -843,6 +865,7 @@ video {
   font-family: 'Fortnite-font-1';
   border-top: 4px solid var(--giallo-sole);
   box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.4);
+  margin-top: 0px !important;
 }
 
 .footer-p {
@@ -1076,26 +1099,90 @@ video {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+
+.btn-Report{ 
+
+    background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid darkred;
+  color: darkred;
+  font-family: 'Fortnite-font-1';
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
 .btn-like:hover {
   background-color: var(--giallo-sole);
   color: black;
   transform: scale(1.05);
 }
 
-
-.avatar-circle {
-  width: 50px;
-  height: 50px;
-  background-color: var(--giallo-sole);
-  color: var(--testo-scuro);
-  font-weight: bold;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+.btn-Report:hover {
+  background-color: darkred;
+  color: whitesmoke;
+  transform: scale(1.05);
 }
 
+
+.avatar-circle {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    background-color: var(--giallo-sole);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    border: solid 3px var(--giallo-sole);
+}
+
+.avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar-circle h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.img-comment-container {
+  border: solid 2px var(--giallo-sole);
+  height: auto;
+  display: inline-block; /* oppure block */
+  overflow: hidden;
+  border-radius: 8px; /* opzionale, estetico */
+}
+
+
+.custom-alert2 {
+  background-color: var(--blu-profondo);
+  color: yellow;              
+  padding: 15px 20px;          
+  font-size: clamp(16px, 3vw, 22px); 
+  font-weight: 600;          
+  max-width: 600px;           
+  margin: 20px auto;          
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1); 
+  text-align: center;
+  transition: all 0.3s ease; 
+  border: solid 2px var(--giallo-sole);
+}
+
+.custom-alert2:hover {
+  background-color: yellow; 
+  color: var(--blu-profondo);
+  border: solid 2px  var(--blu-profondo);
+
+}
 
 
 /* pagina chi siamo */
@@ -1250,7 +1337,7 @@ video {
   outline: none;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   color: white;
-  /* mantiene testo bianco */
+
   border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1264,25 +1351,10 @@ video {
 
 
 
-.comment-card {
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #333;
-  /* testo normale */
-}
 
-.comment-card {
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
-  /* testo bianco di default */
-}
 
-/* Titoli principali e testo importante */
+
+
 .comment-card h5,
 .comment-card .fw-bold,
 .comment-card strong,
@@ -1292,7 +1364,7 @@ video {
 
 }
 
-/* Testo secondario e date */
+
 .comment-card p.fs-3,
 .comment-card p.fs-4,
 .comment-card p.fs-5,
@@ -1302,6 +1374,252 @@ video {
 
 }
 
+
+/* pagina contest */
+
+
+.header-contest { 
+
+  background-image:url(/public/Media/header-contest-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  padding-top: 600px;
+  height: 100%;
+  position: relative;
+  
+}
+
+
+.header-contest::after { 
+  content: 'Pix3l Battl3';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 2;
+  text-align: center;
+  color: black;
+    font-family: 'Fortnite-font-1';
+     background: none;
+
+
+}
+
+.glass-box-contest-header {
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  color: black;
+  text-shadow: 2px 2px 2px var(--giallo-sole);
+  width: max-content;
+  font-family: 'Fortnite-font-1';
+  border: solid 1px black;
+text-shadow:
+    0 0 5px var(--giallo-sole),
+    0 0 10px var(--giallo-sole),
+    2px 2px 6px rgba(0, 0, 0, 0.7);
+  box-shadow:
+    0 0 20px black,  
+    0 10px 30px rgba(0, 0, 0, 0.6);     
+}
+
+
+
+.contest-form input{ 
+  
+  background-color: black;
+  color: var(--giallo-sole);
+  border: solid 1px var(--giallo-sole);
+  font-size: 25px;
+
+
+}
+
+
+
+.contest-form input:focus{ 
+  
+  background-color: black;
+  color: var(--giallo-sole);
+  border: solid 1px var(--giallo-sole);
+
+
+}
+
+.select-custom-contest{ 
+
+    background-color: black;
+  color: var(--giallo-sole);
+  border: solid 1px var(--giallo-sole);
+  margin-top: 15px;
+}
+
+
+.select-custom-contest:focus{ 
+
+    background-color: black;
+  color: var(--giallo-sole);
+  border: solid 1px var(--giallo-sole);
+  margin-top: 15px;
+}
+
+.btn-custom-contest{
+
+    background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid var(--giallo-sole);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color: black;
+  text-shadow: 2px 2px 2px var(--giallo-sole);
+  width: 100px;
+  height: auto;
+  font-family: 'Fortnite-font-1';
+  border: solid 1px black;
+  font-size: 20px;
+}
+
+
+
+.header-gallery { 
+
+  background-image:url(/public/Media/header-contest-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  padding-top: 600px;
+  height: 100%;
+  position: relative;
+  background-attachment: fixed;
+  
+}
+
+.row-contest{ 
+
+    background: rgba(5, 4, 4, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  color: black;
+  text-shadow: 2px 2px 2px var(--giallo-sole);
+  width: 100%;
+  font-family: 'Fortnite-font-1';
+  border: solid 1px black;
+text-shadow:
+    0 0 5px var(--giallo-sole),
+    0 0 10px var(--giallo-sole),
+    2px 2px 6px rgba(0, 0, 0, 0.7);
+  box-shadow:
+    0 0 20px black,  
+    0 10px 30px rgba(0, 0, 0, 0.6);  
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+
+
+.imgGalleria {
+	display: block;
+	max-width: 100%;
+}
+
+.stack {
+	width: 85%;
+	max-width: 400px;
+	transition: .25s ease;
+	&:hover {			
+		transform: rotate(5deg);
+		.card-galleria:before {
+			transform: translatey(-2%) rotate(-4deg);
+		}	
+		.card-galleria:after {
+			transform: translatey(2%) rotate(4deg);
+		}
+	}
+}
+
+.card-galleria {
+	aspect-ratio: 3 / 2;
+	border: 4px solid;
+	background-color: #FFF;
+	position: relative;
+	transition: .15s ease;
+	cursor: pointer;
+	padding: 5% 5% 15% 5%;
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		border: 4px solid;
+		background-color: #FFF;
+		transform-origin: center center;
+		z-index: -1;
+		transition: .15s ease;
+		top: 0;
+		left: 0;
+	}
+	
+	&:before {
+		transform: translatey(-2%) rotate(-6deg);
+	}
+	
+	&:after {
+		transform: translatey(2%) rotate(6deg);
+	}
+	
+
+	
+}
+	.image-galleria {
+		width: 100%;
+		border: 4px solid;
+		background-color: #EEE;
+		aspect-ratio: 1 / 1;
+		position: relative;
+	}
+
+  .image-galleria .imgGalleria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.browser-warning {
+	margin-bottom: 4rem;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+	.browser-warning {
+		display: none;
+	}
+}
+
+/*  */
 
 
 @keyframes fadeIn {
@@ -1323,6 +1641,8 @@ video {
 
 
 /* Pagina Armi */
+
+
 
 
 
@@ -1387,6 +1707,8 @@ video {
   width: 100%;
   box-sizing: border-box;
 }
+
+
 
 
 @media (max-width: 576px) {
@@ -1493,3 +1815,14 @@ video {
     margin-top: 500px;
   }
 }
+
+
+        @media (min-width: 768px) {
+            .text-corner {
+                font-size: 4rem !important;
+            }
+
+                        .text-corner2 {
+                font-size: 2rem !important;
+            }
+        }

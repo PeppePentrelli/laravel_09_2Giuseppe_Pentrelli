@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('comments', function (Blueprint $table) {
+        Schema::table('communities', function (Blueprint $table) {
         
 
 $table->string('imgProfile')->nullable();
@@ -25,7 +25,7 @@ $table->string('imgPost')->nullable();
      */
     public function down(): void
     {
-        Schema::table('comments', function (Blueprint $table) {
+        Schema::table('communities', function (Blueprint $table) {
             
             $table->dropColumn('imgProfile');
             $table->dropColumn('imgPost');
