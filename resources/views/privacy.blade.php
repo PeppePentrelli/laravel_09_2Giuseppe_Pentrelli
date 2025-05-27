@@ -2,11 +2,11 @@
     <x-navbar />
 
     <section class="container my-5">
-<div class="row justify-content-between">
-    <img src="/Media/top-secret-img.png" alt="Immagine scritta Top Secret" style="width: 200px;">
-    <img src="/Media/top-secret-img.png" alt="Immagine scritta Top Secret" style="width: 200px;">
-    <h1 class="text-center bg-opacity-75 text-yellow mb-4">Informativa sulla Privacy</h1>
-</div>
+        <div class="row justify-content-between">
+            <img src="/Media/top-secret-img.png" alt="Immagine scritta Top Secret" style="width: 200px;">
+            <img src="/Media/top-secret-img.png" alt="Immagine scritta Top Secret" style="width: 200px;">
+            <h1 class="text-center bg-opacity-75 text-yellow mb-4">Informativa sulla Privacy</h1>
+        </div>
         <p>Questa informativa descrive come raccogliamo, utilizziamo e proteggiamo i dati personali degli utenti ai
             sensi del Regolamento UE 2016/679 (GDPR).</p>
 
